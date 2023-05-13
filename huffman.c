@@ -4,7 +4,7 @@
 #include "huffman.h"
 
 unsigned long frequency[255]; 
-int queueLength = 0;
+int queLgth = 0;
 struct huffTree *tree[256]; 
 
 int minimumValue(struct huffTree* root)
@@ -93,7 +93,7 @@ void BuildHuffmanTable(char** table)
         {
             struct huffTree* n = createNodes(frequency, i);
             tree[index] = n;
-            queueLength++;
+            queLgth++;
             index++;
         }
     }
@@ -238,7 +238,7 @@ char* Concat(char* prefix, char letter)
 
 void BuildTree()
 {
-    int length = queueLength;
+    int length = queLgth;
     int i;
     while (length > 1)
     {
@@ -246,7 +246,7 @@ void BuildTree()
         struct huffTree** n = getTree(tree, 0);
         struct huffTree** m = getTree(tree, 1);
 
-        qsort(tree, queueLength, sizeof(struct huffTree*), compareFreq);
+        qsort(tree, queLgth, sizeof(struct huffTree*), compareFreq);
 
         node->left = (*n);
         node->right = (*m);
@@ -254,10 +254,10 @@ void BuildTree()
         node->frequency = node->right->frequency + node->left->frequency;
 
         tree[0] = node;
-        queueLength--;
+        queLgth--;
         length--;
 
-        for (i = 1; i <= queueLength; i++)
+        for (i = 1; i <= queLgth; i++)
         {
             tree[i] = tree[i + 1];
         }
