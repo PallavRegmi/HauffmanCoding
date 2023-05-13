@@ -7,7 +7,7 @@ unsigned long frequency[255];
 int queueLength = 0;
 struct huffTree *tree[256]; 
 
-int minVal(struct huffTree* root)
+int minimumValue(struct huffTree* root)
 {
   if (root == NULL)
     return -1;  
