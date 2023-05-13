@@ -47,7 +47,7 @@ void WriteHeader(FILE* outputFile, unsigned long frequency[])
 }
 
 
-unsigned int flipBinary(int num)
+unsigned int flipBin(int num)
 {
   unsigned int finalValue = 0;
   int exponent = 128; 
@@ -76,7 +76,7 @@ void writeChar(char* code, unsigned int* rem, int* remLength, FILE* out)
 
         if (bitLength == 8)
         {
-            finalValue = flipBinary(finalValue);
+            finalValue = flipBin(finalValue);
             fwrite(&finalValue, sizeof(char), 1, out);
             bitLength = 0;
             finalValue = 0;
