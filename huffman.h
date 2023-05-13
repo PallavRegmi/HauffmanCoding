@@ -1,8 +1,6 @@
-/**********************************************/
-/*Himanshu Chaudhary                          */
-/*May 11, 2016                                */
-/*CS 241L    Section #003                     */
-/**********************************************/
+/*Pallav Regmi
+CS-241 Lab 10
+Hauffman Coding */
 
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
