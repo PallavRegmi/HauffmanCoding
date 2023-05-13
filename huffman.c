@@ -1,3 +1,8 @@
+/*Pallav Regmi
+CS-241 Lab 10
+Hauffman Coding */
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
