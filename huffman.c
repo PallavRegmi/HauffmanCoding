@@ -130,7 +130,7 @@ void startEncode(FILE* in, FILE* out)
     }
 
     printTable(frequency, table);
-    freeList(*tree);
+    freeLst(*tree);
 }
 
 void readHeader(FILE* in)
@@ -372,7 +372,7 @@ void printTable(unsigned long* frequency, char** table)
 }
 
 
-void freeList(struct huffTree* head)
+void freeLst(struct huffTree* head)
 {
     struct huffTree* current = head;
     struct huffTree* temp;
