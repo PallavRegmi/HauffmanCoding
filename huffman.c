@@ -27,7 +27,7 @@ int minimumValue(struct huffTree* root)
 }
 
 
-void WriteHeader(FILE* outputFile, unsigned long frequency[])
+void WrtHdr(FILE* outputFile, unsigned long frequency[])
 {
     int count, i = 0;
     unsigned long total = 0;
@@ -116,7 +116,7 @@ void startEncode(FILE* in, FILE* out)
     totalChars = countFrequency(in);
     BuildHuffmanTable(table);
 
-    WriteHeader(out, frequency);
+    WrtHdr(out, frequency);
     fwrite(&totalChars, sizeof(unsigned long), 1, out);
 
     rewind(in);
