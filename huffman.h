@@ -30,7 +30,7 @@ void traverseTree(struct huffTree *pool, char *prefix, char **table);
 char *Concat(char *prefix, char letter);
 unsigned long countFrequency(FILE* in);
 int minVal(struct huffTree* root);
-void BuildHuffmanTable(char **table);
+void BuildHuffTbl(char **table);
 void BuildTree();
 
 
