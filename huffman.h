@@ -51,7 +51,7 @@ void writeChar(char *code, unsigned int *rem, int *remLength, FILE *out);
 void readHeader(FILE* in);
 int getBit(FILE *in);
 int DecodeSymbol(FILE*in, struct huffTree *tree);
-void decodeFile(FILE* in, FILE* out);
+
 
 
 
