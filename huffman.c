@@ -16,9 +16,9 @@ int minimumValue(struct huffTree* root)
     return root->symbol;  
 
   if (root->left != NULL)
-    return minVal(root->left);  
+    return minimumValue(root->left);  
 
-  return minVal(root->right);  
+  return minimumValue(root->right);  
 }
 
 
@@ -280,7 +280,7 @@ int compareFreq(const void* a, const void* b)
   }
   if((*first)->frequency == (*second)->frequency)
     {
-      return (minVal(*first) < minVal(*second)) ? -1:1;
+      return (minimumValue(*first) < minimumValue(*second)) ? -1:1;
     }
   else return 0;
 }
