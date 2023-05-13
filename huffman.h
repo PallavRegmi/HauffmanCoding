@@ -58,19 +58,4 @@ void decodeFile(FILE* in, FILE* out);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
