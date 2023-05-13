@@ -87,7 +87,7 @@ void writeChar(char* code, unsigned int* rem, int* remLength, FILE* out)
     *remLength = bitLength;
 }
 
-void BuildHuffmanTable(char** table)
+void BuildHuffTbl(char** table)
 {
     int index = 0;
     char* prefix = (char*)calloc(1, sizeof(char));
@@ -114,7 +114,7 @@ void startEncode(FILE* in, FILE* out)
     int length = 0;
 
     totalChars = countFrequency(in);
-    BuildHuffmanTable(table);
+    BuildHuffTbl(table);
 
     WrtHdr(out, frequency);
     fwrite(&totalChars, sizeof(unsigned long), 1, out);
@@ -199,7 +199,7 @@ void startDecode(FILE* in, FILE* out)
     char* table[256];
 
     readHeader(in);
-    BuildHuffmanTable(table);
+    BuildHuffTbl(table);
 
     while ((c = DecodeSymbol(in, *tree)) != 10000)
         fwrite(&c, sizeof(char), 1, out);
