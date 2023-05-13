@@ -45,7 +45,7 @@ void printTable(unsigned long *frequency, char** table);
 void freeList(struct huffTree* head);
 
 /*function used to encode,decode data and read and write data from file*/
-void WriteHeader(FILE *out, unsigned long frequencies[]);
+void WrtHdr(FILE *out, unsigned long frequencies[]);
 unsigned int flipBin(int num);
 void writeChar(char *code, unsigned int *rem, int *remLength, FILE *out);
 void readHeader(FILE* in);
