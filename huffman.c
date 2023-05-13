@@ -343,34 +343,6 @@ void printCode(char* code)
 
     printf("\n");
 }
-void decodeFile(FILE *in, FILE *out)
-{
-  int byte, i , j;
-  struct HuffTree *head;
-  head = NULL;
-  i=0,j=0;
-  fread(&symbols,1,1,in);
-  while(j < symbols)
-  {
-    fread(&i,1,1,in);
-    fread(&freqComp[i],8,1,in);
-    head = SortTheTree(head,i,freqComp[i],NULL,NULL);
-    j++;
-  }
-  fread(&charCount,8,1,in);
-  head = huffSearchTree(head);
-
-  prev = head;
-
-  while(EOF != (byte = fgetc(in)))/*Grabs byte from file.*/
-  {
-    count = 0;
-    head = decodeHelper(head, byte, out);
-  }
-}
-
-
-
 
 void printTable(unsigned long* frequency, char** table)
 {
