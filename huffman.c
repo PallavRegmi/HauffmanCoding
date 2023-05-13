@@ -103,7 +103,7 @@ void BuildHuffmanTable(char** table)
         }
     }
     BuildTree();
-    traverseTree(*tree, prefix, table);
+    travTree(*tree, prefix, table);
 }
 
 void startEncode(FILE* in, FILE* out)
@@ -209,7 +209,7 @@ void startDecode(FILE* in, FILE* out)
 
 
 
-void traverseTree(struct huffTree *tree, char *prefix, char **table)
+void travTree(struct huffTree *tree, char *prefix, char **table)
 {
   if(!tree->left && !tree->right)
   {
@@ -219,11 +219,11 @@ void traverseTree(struct huffTree *tree, char *prefix, char **table)
   {
     if(tree->left)
     {
-      traverseTree(tree->left, Concat(prefix, '0'),table);
+      travTree(tree->left, Concat(prefix, '0'),table);
     }
     if(tree->right)
     {
-      traverseTree(tree->right, Concat(prefix, '1'),table);
+      travTree(tree->right, Concat(prefix, '1'),table);
     }
     free(prefix);
   }
